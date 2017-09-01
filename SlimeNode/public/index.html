@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Slime Soccer</title>
+	
+	<link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/master.css" />
+
+    <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/phaser.min.js"></script>
+    <script src="/js/game.js"></script>
+    <script src="/js/animation_bow_arrow.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/emitters.js"></script>
+    <script src="/js/player.js"></script>
+    <script src="/js/front-end.js"></script>
+    <script src="/js/slime-default.js"></script>
+    <script src="/js/slime-speedy.js"></script>
+    <script src="/js/slime-stopper.js"></script>
+    <script src="/js/slime-ghost.js"></script>
+    <script src="/js/slime-reverse.js"></script>
+    <script src="/js/slime-water.js"></script>
+    <script src="/js/slime-sponge.js"></script>
+    <script src="/js/slime-lover.js"></script>
+    <script src="/js/slime-jumper.js"></script>
+    <script src="/js/slime-weight.js"></script>
+    <script src="/js/slime-unicorn.js"></script>
+    <script src="/js/slime-gravity.js"></script>
+    <script src="/js/slime-mask.js"></script>
+    <script src="/js/slime-zeus.js"></script>
+    <script src="/js/zeus-animation.js"></script>
+    <script src="/js/slime-boxer.js"></script>
+      <script src="/js/slime-goku.js"></script>
+  </head>
+  <body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="rooms-container">
+					<p class="rooms-title">Rooms</p>
+					<ul class="rooms"></ul>
+					<p class="create-room-title">Create room</p>
+					<form class="create_room">
+						<div class="row">
+							<div class="col-xs-8">
+								<input type="text" class="room_name form-control" />
+							</div>
+							<div class="col-xs-4">
+								<input type="submit" class="form-control btn btn-primary" value="Create room" />
+							</div>
+						</div>
+					</form>
+					<p class="errors" style="display: none">Errors</p>
+				</div>
+				<div class="phaser-container">
+					<div id="slime-game"></div>
+					<p class="winner" style="display: none"></p>
+				</div>
+				<div class="player-select" style="display: none">
+					<p class="player-select-title">Select a character</p>
+					<ul>
+						<li><a href="#" character="slime-default"><img src="/assets/slime-default.png" /></a><i>Default slime</i></li>
+						<li><a href="#" character="slime-speedy"><img src="/assets/slime-speedy.png" /></a><i>Slime who speeds up the ball</i></li>
+						<li><a href="#" character="slime-stopper"><img src="/assets/slime-stopper.png" /></a><i>Slime who stops the ball</i></li>
+						<li><a href="#" character="slime-ghost"><img src="/assets/slime-ghost.png" /></a><i>Slime who likes to play hide & seek</i></li>
+						<li><a href="#" character="slime-reverse"><img src="/assets/slime-reverse.png" /></a><i>Slime who likes to reverse the ball</i></li>
+						<li><a href="#" character="slime-water"><img src="/assets/slime-water.png" /></a><i>Slime who likes push the ball upwards</i></li>
+						<li><a href="#" character="slime-sponge"><img src="/assets/slime-sponge.png" /></a><i>Slime that grows</i></li>
+						<li><a href="#" character="slime-lover"><img src="/assets/slime-lover.png" /></a><i>Slime that attracts other slimes</i></li>
+						<li><a href="#" character="slime-jumper"><img src="/assets/slime-jumper.png" /></a><i>Slime that likes to party</i></li>
+						<li><a href="#" character="slime-weight"><img src="/assets/slime-weight.png" /></a><i>Slime that dont likes to party</i></li>
+						<li><a href="#" character="slime-unicorn"><img src="/assets/slime-unicorn.png" /></a><i>A very majestic flying Slime</i></li>
+						<li><a href="#" character="slime-gravity"><img src="/assets/slime-gravity.png" /></a><i>Slime that likes gravity</i></li>
+                        <li><a href="#" character="slime-mask"><img src="/assets/slime-mask.png" /></a><i>SSSSSSSSSSSSSSSSMOKIN'</i></li>
+                        <li><a href="#" character="slime-zeus"><img src="/assets/slime-zeus.png" /></a><i>I need more thunderbolts</i></li>
+                        <li><a href="#" character="slime-boxer"><img src="/assets/slime-boxer.png" /></a><i>I'm simply the best</i></li>
+                        <li><a href="#" character="slime-goku"><img src="/assets/slime-goku.png" /></a><i>KAAAMEEEHAAAMEEEHAAA</i></li>
+					</ul>
+				</div>
+				<div class="players-lobby" style="display: none">
+					<span class="player_1"></span>
+					<span class="player_2"></span>
+				</div>
+				<p style="display: none; clear: both;" class="score">Tussenstand<span class="goals"></span></p>
+				<a href="#" class="btn btn-primary home-button" style="display: none; width: 100%;">Terug naar home</a>
+				<p class="spectators" style="display: none">Spectators: <span></span></p>
+				<div class="play-again-container" style="display: none">
+					<a href="#" class="btn btn-warning play-again" style="width: 100%;">Speel nog een keer</a>
+				</div>
+				<div class="game-settings">
+					<div class="breakline"></div>
+					<a href="#" class="btn btn-success ready-button">Ready up</a>
+					<p class="game-settings-text">Game settings</p>
+					<form class="game-settings-save" method="POST">
+						<label>Score limit</label>
+						<input type="text" class="form-control score-limit" value="5" />
+						<button type="submit" class="btn btn-primary pull-right">Save settings</button>
+					</form>
+					<p class="score-limit-visual">Score limit: <span></span></p>
+					
+				</div>
+				<div class="breakline"></div>
+				<div class="chat" style="">
+					<h1 class="chat-title">Chatroom</h1>
+					<div class="row">
+						<div class="col-xs-6">
+							<ul class="chat_messages"></ul>
+							<a href="#" class="btn btn-danger home-button home-button-below-chat" style="width: 100%; margin: 20px 0px 0px 0px; display: none">Leave lobby</a>
+						</div>
+						<div class="col-xs-6">
+							<form method="POST" class="send_message">
+								<textarea name="message" class="message form-control" placeholder="Message..."></textarea><br />
+								<button type="submit" class="btn btn-success pull-right">Send</button><i class="pull-right or-press">Or press enter</i>
+							</form>
+							<form method="POST" class="edit_username">
+								<input type="text" class="username form-control margin-bottom-20" placeholder="Username..." />
+								<button type="submit" class="btn btn-success pull-right">Edit</button><i class="pull-right current-name">Current username: <b></b></i>					
+							</form>
+						</div>
+					</div>
+				</div>
+				<p class="online-players">Online players: <span></span></p>
+				<p class="player-nicknames"></p>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>

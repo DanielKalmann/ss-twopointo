@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>SlimeNode</Name>
+    <RootNamespace>SlimeNode</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>b092ff96-fe40-4187-9b5e-1dec8ab5ed7f</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>server.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ProjectFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="public\dev\game.js" />
+    <Compile Include="public\js\animations.js" />
+    <Compile Include="public\js\animation_bow_arrow.js" />
+    <Compile Include="public\js\emitters.js" />
+    <Compile Include="public\js\front-end.js" />
+    <Compile Include="public\js\game.js" />
+    <Compile Include="public\js\jquery.js" />
+    <Compile Include="public\js\phaser.min.js" />
+    <Compile Include="public\js\player.js" />
+    <Compile Include="public\js\slime-boxer.js" />
+    <Compile Include="public\js\slime-default.js" />
+    <Compile Include="public\js\slime-ghost.js" />
+    <Compile Include="public\js\slime-goku.js" />
+    <Compile Include="public\js\slime-gravity.js" />
+    <Compile Include="public\js\slime-jumper.js" />
+    <Compile Include="public\js\slime-lover.js" />
+    <Compile Include="public\js\slime-mask.js" />
+    <Compile Include="public\js\slime-reverse.js" />
+    <Compile Include="public\js\slime-speedy.js" />
+    <Compile Include="public\js\slime-sponge.js" />
+    <Compile Include="public\js\slime-stopper.js" />
+    <Compile Include="public\js\slime-unicorn.js" />
+    <Compile Include="public\js\slime-water.js" />
+    <Compile Include="public\js\slime-weight.js" />
+    <Compile Include="public\js\slime-zeus.js" />
+    <Compile Include="public\js\zeus-animation.js" />
+    <Compile Include="server.js" />
+    <Content Include="package.json" />
+    <Content Include="public\assets\arrow.png" />
+    <Content Include="public\assets\ball.png" />
+    <Content Include="public\assets\bbss01.png" />
+    <Content Include="public\assets\bg-2.jpg" />
+    <Content Include="public\assets\bg.jpg" />
+    <Content Include="public\assets\bow.png" />
+    <Content Include="public\assets\boxinglove.png" />
+    <Content Include="public\assets\charge-ball.png" />
+    <Content Include="public\assets\cloud01.png" />
+    <Content Include="public\assets\cloud02.png" />
+    <Content Include="public\assets\emitter01.png" />
+    <Content Include="public\assets\emitter02.png" />
+    <Content Include="public\assets\emitter03.png" />
+    <Content Include="public\assets\emitter04.png" />
+    <Content Include="public\assets\emitterss01.png" />
+    <Content Include="public\assets\emitterss02.png" />
+    <Content Include="public\assets\explosion.png" />
+    <Content Include="public\assets\fire1.png" />
+    <Content Include="public\assets\fire2.png" />
+    <Content Include="public\assets\fire3.png" />
+    <Content Include="public\assets\goal.png" />
+    <Content Include="public\assets\goku-emitter-ss.png" />
+    <Content Include="public\assets\goku-hair-ss.png" />
+    <Content Include="public\assets\goku-projectile.png" />
+    <Content Include="public\assets\heart.png" />
+    <Content Include="public\assets\helicopterss.png" />
+    <Content Include="public\assets\mask-opponent.png" />
+    <Content Include="public\assets\mask-player.png" />
+    <Content Include="public\assets\slime-baseball.png" />
+    <Content Include="public\assets\slime-boxer.png" />
+    <Content Include="public\assets\slime-default.png" />
+    <Content Include="public\assets\slime-ghost.png" />
+    <Content Include="public\assets\slime-goku.png" />
+    <Content Include="public\assets\slime-gravity.png" />
+    <Content Include="public\assets\slime-jumper.png" />
+    <Content Include="public\assets\slime-lover.png" />
+    <Content Include="public\assets\slime-mask.png" />
+    <Content Include="public\assets\slime-psd.psd" />
+    <Content Include="public\assets\slime-reverse.png" />
+    <Content Include="public\assets\slime-speedy.png" />
+    <Content Include="public\assets\slime-sponge.png" />
+    <Content Include="public\assets\slime-stopper.png" />
+    <Content Include="public\assets\slime-unicorn.png" />
+    <Content Include="public\assets\slime-water.png" />
+    <Content Include="public\assets\slime-weight.png" />
+    <Content Include="public\assets\slime-zeus.png" />
+    <Content Include="public\assets\stop.png" />
+    <Content Include="public\assets\test-ss.png" />
+    <Content Include="public\assets\zeuscharge.png" />
+    <Content Include="public\css\bootstrap.css" />
+    <Content Include="public\css\master.css" />
+    <Content Include="public\dev.html" />
+    <Content Include="public\index.html" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public\" />
+    <Folder Include="public\assets\" />
+    <Folder Include="public\css\" />
+    <Folder Include="public\dev\" />
+    <Folder Include="public\js\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
